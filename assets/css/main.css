@@ -1,0 +1,42 @@
+@import "fonts.css";
+@import "container.css";
+@import "grid.css";
+@import "gallery.css";
+@import "flex.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body,
+#__nuxt {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: -0.025em; /* tracking-tight */
+  font-weight: 800; /* font-extrabold */
+  color: #1f2937; /* text-gray-900 */
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 1.5rem; /* text-4xl */
+}
+
+p {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1rem; /* text-4xl */
+}

@@ -1,0 +1,47 @@
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 30px;
+}
+
+.gallery_image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: -20px;
+  padding: 0;
+}
+
+.bg_image_1 {
+  background-image: url("/assets/images/chatbot.png");
+}
+.bg_image_2 {
+  background-image: url("/assets/images/brain.png");
+}
+.bg_image_3 {
+  background-image: url("/assets/images/stream.png");
+  /* margin-left: -32x; */
+}
+.bg_image_4 {
+  background-image: url("/assets/images/youtube.png");
+  /* margin-left: -16px;
+  margin-right: 0; */
+}
+.bg_image_5 {
+  background-image: url("/assets/images/wizard.png");
+}
+.bg_image_6 {
+  background-image: url("/assets/images/robohr.png");
+}
+.bg_image_7 {
+  background-image: url("/assets/images/tools.png");
+  /* margin-left: -16px;
+  margin-right: 0; */
+}
+
+.gallery_link {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
