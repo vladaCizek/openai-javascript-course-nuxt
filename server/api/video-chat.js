@@ -79,7 +79,7 @@ export default defineEventHandler(async (event) => {
   if (firstMessage) {
     const initialPrompt = `Give me a summary of the transcript of : ${input}`;
 
-    const message = new ChatMessage(initialPrompt, ROLES.HUMAN);
+    const message = new ChatMessage(initialPrompt, ROLES.USER);
     chatHistory.push(message);
 
     // Youtube Transcipt API
@@ -99,7 +99,7 @@ export default defineEventHandler(async (event) => {
     try {
       console.log("Received a question");
       // get the question and add it to history
-      const message = new ChatMessage(input, ROLES.HUMAN);
+      const message = new ChatMessage(input, ROLES.USER);
       chatHistory.push(message);
 
       const response = await chain.call({
@@ -107,10 +107,9 @@ export default defineEventHandler(async (event) => {
         chat_history: chatHistory,
       });
 
-      chatHistory.push({
-        role: ROLES.AI,
-        content: response.text,
-      });
+      const responseMessage = new ChatMessage(response.text, ROLES.AI);
+
+      chatHistory.push(responseMessage);
 
       return response;
     } catch (error) {

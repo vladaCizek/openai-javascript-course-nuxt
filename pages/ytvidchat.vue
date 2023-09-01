@@ -50,18 +50,19 @@ export default {
     async handleSubmit() {
       try {
         this.clearData();
+        const input = this.prompt;
+        this.resetPrompt();
         const url = "/api/video-chat";
         const { text } = await $fetch(url, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
           },
-          body: { input: this.prompt, firstMessage: this.firstMessage },
+          body: { input, firstMessage: this.firstMessage },
         });
         if (this.firstMessage) {
           this.firstMessage = false;
         }
-        this.resetPrompt();
         this.addMessage(text, "user");
       } catch (error) {
         console.log(error);
