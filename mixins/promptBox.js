@@ -6,11 +6,11 @@ export default {
     };
   },
   methods: {
-    updatePrompt(value = "") {
-      this.prompt = value;
+    updatePrompt(value = "", promptName = "prompt") {
+      this[promptName] = value;
     },
-    resetPrompt() {
-      this.prompt = "";
+    resetPrompt(promptName = "prompt") {
+      this[promptName] = "";
     },
   },
 };
